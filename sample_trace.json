@@ -1,0 +1,99 @@
+{
+  "trace_id": "sample-execution-001",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Please fetch data from the API and analyze it",
+      "tool_calls": [],
+      "tool_results": [],
+      "timestamp": "2026-01-03T10:00:00Z"
+    },
+    {
+      "role": "assistant",
+      "content": "I'll fetch the data for you using the API",
+      "tool_calls": [
+        {
+          "tool_name": "fetch_api_data",
+          "arguments": {
+            "url": "https://api.example.com/data",
+            "method": "GET"
+          },
+          "call_id": "call-1",
+          "timestamp": "2026-01-03T10:00:01Z"
+        }
+      ],
+      "tool_results": [],
+      "timestamp": "2026-01-03T10:00:01Z"
+    },
+    {
+      "role": "tool",
+      "content": "API data retrieved successfully",
+      "tool_calls": [],
+      "tool_results": [
+        {
+          "call_id": "call-1",
+          "success": true,
+          "result": {
+            "data": [1, 2, 3, 4, 5],
+            "status": "success"
+          },
+          "error": null,
+          "timestamp": "2026-01-03T10:00:02Z"
+        }
+      ],
+      "timestamp": "2026-01-03T10:00:02Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Now I'll analyze the data",
+      "tool_calls": [
+        {
+          "tool_name": "analyze_data",
+          "arguments": {
+            "data": [1, 2, 3, 4, 5],
+            "analysis_type": "statistical"
+          },
+          "call_id": "call-2",
+          "timestamp": "2026-01-03T10:00:03Z"
+        }
+      ],
+      "tool_results": [],
+      "timestamp": "2026-01-03T10:00:03Z"
+    },
+    {
+      "role": "tool",
+      "content": "Analysis complete",
+      "tool_calls": [],
+      "tool_results": [
+        {
+          "call_id": "call-2",
+          "success": true,
+          "result": {
+            "mean": 3,
+            "median": 3,
+            "std_dev": 1.41
+          },
+          "error": null,
+          "timestamp": "2026-01-03T10:00:04Z"
+        }
+      ],
+      "timestamp": "2026-01-03T10:00:04Z"
+    },
+    {
+      "role": "assistant",
+      "content": "The analysis is complete. The data has a mean of 3, median of 3, and standard deviation of 1.41.",
+      "tool_calls": [],
+      "tool_results": [],
+      "timestamp": "2026-01-03T10:00:05Z"
+    }
+  ],
+  "token_usage": {
+    "prompt_tokens": 450,
+    "completion_tokens": 280,
+    "total_tokens": 730
+  },
+  "metadata": {
+    "agent_version": "1.0.0",
+    "execution_time_ms": 5000
+  }
+}

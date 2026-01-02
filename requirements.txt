@@ -1,0 +1,11 @@
+# RS-1 (Reliability Sentinel) Requirements
+# Minimal dependencies for infrastructure-grade reliability evaluation
+
+# Core - No dependencies on standard library
+
+# Testing only
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Type checking (development only)
+mypy>=1.5.0

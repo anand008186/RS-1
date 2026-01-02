@@ -1,0 +1,103 @@
+{
+  "trace_id": "problematic-execution-002",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Please fetch some data",
+      "tool_calls": [],
+      "tool_results": [],
+      "timestamp": "2026-01-03T11:00:00Z"
+    },
+    {
+      "role": "assistant",
+      "content": "I called the fetch_data tool and got the results",
+      "tool_calls": [],
+      "tool_results": [],
+      "timestamp": "2026-01-03T11:00:01Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Let me process the data",
+      "tool_calls": [
+        {
+          "tool_name": "process",
+          "arguments": {},
+          "call_id": "call-1",
+          "timestamp": "2026-01-03T11:00:02Z"
+        },
+        {
+          "tool_name": "process",
+          "arguments": {},
+          "call_id": "call-2",
+          "timestamp": "2026-01-03T11:00:03Z"
+        },
+        {
+          "tool_name": "process",
+          "arguments": {},
+          "call_id": "call-3",
+          "timestamp": "2026-01-03T11:00:04Z"
+        },
+        {
+          "tool_name": "process",
+          "arguments": {},
+          "call_id": "call-4",
+          "timestamp": "2026-01-03T11:00:05Z"
+        }
+      ],
+      "tool_results": [],
+      "timestamp": "2026-01-03T11:00:02Z"
+    },
+    {
+      "role": "tool",
+      "content": "Results",
+      "tool_calls": [],
+      "tool_results": [
+        {
+          "call_id": "call-1",
+          "success": false,
+          "result": null,
+          "error": "Failed to process",
+          "timestamp": "2026-01-03T11:00:06Z"
+        },
+        {
+          "call_id": "call-2",
+          "success": false,
+          "result": null,
+          "error": "Failed to process",
+          "timestamp": "2026-01-03T11:00:07Z"
+        },
+        {
+          "call_id": "call-99",
+          "success": true,
+          "result": "phantom result",
+          "error": null,
+          "timestamp": "2026-01-03T11:00:08Z"
+        }
+      ],
+      "timestamp": "2026-01-03T11:00:08Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Processing the data again",
+      "tool_calls": [
+        {
+          "tool_name": "process",
+          "arguments": {},
+          "call_id": "call-5",
+          "timestamp": "2026-01-03T11:00:09Z"
+        }
+      ],
+      "tool_results": [],
+      "timestamp": "2026-01-03T11:00:09Z"
+    }
+  ],
+  "token_usage": {
+    "prompt_tokens": 5000,
+    "completion_tokens": 3000,
+    "total_tokens": 8000
+  },
+  "metadata": {
+    "agent_version": "1.0.0",
+    "execution_time_ms": 9000
+  }
+}
